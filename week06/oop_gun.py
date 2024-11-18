@@ -1,0 +1,26 @@
+class Gun:
+    def __init__(self,name,ammo,hp):
+        self.ชื่อ = name
+        self.กระสุน = ammo
+        self.พลังชีวิต = hp
+    def add_ammo(self,ammo):
+        self.กระสุน += ammo
+    def frie_ammo(self):
+        if self.กระสุน > 0:
+            self.กระสุน -= 1
+        else:
+            print('กระสุนหมด')
+    def fire_gun(self,enemy):
+        self.กระสุน -= 1
+        enemy.พลังชีวิต -= 3
+
+
+gun1 = Gun("T1",5,10)
+gun2 = Gun("T2",10,5)
+gun2.fire_gun(gun1)
+print(gun2.กระสุน)
+print(gun1.พลังชีวิต)
+#gun3 = Gun("t3",5)
+#gun1.add_ammo(5)
+#gun2.frie_ammo()
+#print(gun2.กระสุน)
